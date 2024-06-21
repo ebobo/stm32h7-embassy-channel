@@ -1,0 +1,19 @@
+# This file was automatically generated.
+
+[target.thumbv7em-none-eabi]
+runner = 'probe-rs run --chip STM32H743ZITx'
+
+[build]
+target = "thumbv7em-none-eabi"
+
+[env]
+DEFMT_LOG = "trace"
+
+[unstable]
+build-std = ["core", "alloc"]
+build-std-features = ["panic_immediate_abort"]
+
+# With this net setting in place, Cargo will use the local git CLI and also authenticate itself properly
+# so cargo can fetch dependencies from private repositories use ssh.
+[net]
+git-fetch-with-cli = true
